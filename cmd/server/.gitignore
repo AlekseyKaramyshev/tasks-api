@@ -1,0 +1,4 @@
+# binaries
+*.exe
+*.exe~
+*.dll
