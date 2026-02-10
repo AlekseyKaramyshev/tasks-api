@@ -9,6 +9,13 @@ go run .\cmd\server\
 
 ---
 
+Endpoint table
+
+- /tasks        - **task storage**
+- /tasks/${i}   - **specific task**
+
+---
+
 - curl tests ( Good/Bad examples )
 
 # create
