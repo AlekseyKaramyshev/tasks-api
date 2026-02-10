@@ -9,10 +9,10 @@ go run .\cmd\server\
 
 ---
 
-- curl tests
+- curl tests ( Good/Bad examples )
 
-```zsh
 # create
+```zsh
 $ curl -iLH 'Content-type: application/json' -d '{"title":"test1"}' 'localhost:8080/tasks'
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -28,8 +28,10 @@ Date: Sun, 08 Feb 2026 12:14:26 GMT
 Content-Length: 30
 
 {"error":"title is required"}
+```
 
 # list all
+```zsh
 $ curl -iL 'localhost:8080/tasks'
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -43,8 +45,10 @@ HTTP/1.1 405 Method Not Allowed
 Content-Type: application/json
 Date: Sun, 08 Feb 2026 12:15:54 GMT
 Content-Length: 31
+```
 
 # get one
+```zsh
 $ curl -iL 'localhost:8080/tasks/1'
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -60,8 +64,10 @@ Date: Sun, 08 Feb 2026 12:16:56 GMT
 Content-Length: 27
 
 {"error":"task not found"}
+```
 
 # update one
+```zsh
 $ curl -iLH 'Content-type: application/json' -X PUT -d '{"title":"test1_1"}' 'localhost:8080/tasks/1'
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -85,8 +91,10 @@ Date: Sun, 08 Feb 2026 12:19:50 GMT
 Content-Length: 42
 
 [{"id":1,"title":"test1_1","done":false}]
+```
 
 # delete one
+```zsh
 $ curl -iLH 'Content-type: application/json' -X DELETE -d '{"title":"test1_1"}' 'localhost:8080/tasks/1'
 HTTP/1.1 204 No Content
 Date: Sun, 08 Feb 2026 12:20:18 GMT
