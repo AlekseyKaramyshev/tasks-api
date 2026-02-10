@@ -9,10 +9,14 @@ go run .\cmd\server\
 
 ---
 
-Endpoint table
 
-- /tasks        - **task storage**
-- /tasks/${i}   - **specific task**
+|**Method**|**Endpoint**|**Description**|
+|-|-|-|
+|**GET**|tasks|list all tasks|
+|**GET**|tasks/`{id:int}`|list specific task|
+|**POST**|tasks|create task|
+|**PUT**|tasks/`{id:int}`|update specific task|
+|**DELETE**|tasks/`{id:int}`|delete specific task|
 
 ---
 
